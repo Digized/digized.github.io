@@ -4,12 +4,10 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+*Third year software engineering student at University of Ottawa.*
 
-### More Information
+### Useful Links
 
-A place to include any other types of information that you'd like to include about yourself.
+Email: [Zuraiz.Zafar97@gmail.com](mailto:Zuraiz.Zafar97@gmail.com)
 
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+Github: [Digized](https://github.com/digized)
