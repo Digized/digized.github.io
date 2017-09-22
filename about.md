@@ -11,3 +11,5 @@ permalink: /about/
 Email: [Zuraiz.Zafar97@gmail.com](mailto:Zuraiz.Zafar97@gmail.com)
 
 Github: [Digized](https://github.com/digized)
+
+LinkedIn: [Zuraiz Zafar](https://www.linkedin.com/in/zuraizzafar/)
