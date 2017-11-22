@@ -10,7 +10,7 @@ Ahh, when begining anything new, I think it is now required to begin with the gl
 This blog is using github pages and jekyll, github pages aren't hard to get started with, it's just that I had no idea that I could essentially create md files and not worry about linking things over and over again.
 
 ## How this began
-I initially saw this functionality on one of my friend's blog ([link here](ryanfleck.github.io)). I was unsure of how he did it so I started investigating. I learned soon that he is using jekyll. There were obviously other factors to get this up and running as well, big one being that web scraping scene in *The Social Network*. A place where I can write my thoughts out while working on something. 
+I initially saw this functionality on one of my friend's blog ([link here](https://ryanfleck.github.io)). I was unsure of how he did it so I started investigating. I learned soon that he is using jekyll. There were obviously other factors to get this up and running as well, big one being that web scraping scene in *The Social Network*. A place where I can write my thoughts out while working on something. 
 
 So now lets see how this came to be...
 
