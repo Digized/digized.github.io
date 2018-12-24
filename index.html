@@ -1,18 +1,119 @@
----
-layout: default
----
+<html>
+<style>
+    body {
+        font-family: monospace;
+        font-size: larger;
+    }
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+    .dark {
+        background: black;
+        color: #20C20E;
+    }
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+    a {
+        color: inherit;
+        font-weight: 200;
+        text-decoration: none;
+    }
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
+    a:hover {
+        font-weight: 900;
+    }
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+    .header {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+    }
+    .content {
+        width: 70%;
+        margin: auto;
+    }
+
+</style>
+
+<head>
+    <title>Zuraiz Zafar | Digized </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+</head>
+
+<body class="dark">
+    <div class="header">
+        <h1>Zuraiz Zafar | Digized</h1>
+        <a href="https://github.com/digized">Github</a>
+        <a href="https://linkedin.com/in/zuraizzafar">LinkedIn</a>
+        <a href="resume.pdf">Resume</a>
+        <a href="http://instagram.com/digizeds">Instagram</a>
+        <a href="http://instagram.com/digizeds">Projects</a>
+        <a href="javascript:toggle();">💡</a>
+    </div>
+    <div class="content">
+        <h2>Projects</h2>
+        <div class="projects"></div>
+    </div>
+</body>
+
+<script>
+
+    const projects = [
+        {
+            title: "Test",
+            images: [
+
+            ],
+            url: "",
+            description: "Test description."
+        }
+    ];
+
+    const projectsContainer = document.getElementsByClassName("projects")[0];
+
+    projects.forEach(project => {
+        const link = document.createElement("a")
+        link.setAttribute("href", project.url);
+        link.textContent = project.title;
+        projectsContainer.appendChild(link);
+    });
+
+
+
+    const elements = [...document.getElementsByTagName("a"), ...document.getElementsByTagName("h1"), ...document.getElementsByTagName("h2")];
+    for (let element of elements) {
+        element.originalText = element.textContent;
+        element.onmouseover = (event) => {
+            element.interval = setInterval(() => {
+                element.textContent = to(element.textContent, element.originalText.toUpperCase());
+            }, 1);
+        }
+        element.onmouseleave = (event) => {
+            clearInterval(element.interval);
+            element.textContent = element.originalText;
+        }
+    }
+
+    const to = (current, target) => {
+        if (target.length < 1 && current.length < 1) return "";
+
+        if (target.length < 1 && current.length > 0) { target = " " };
+        if (current.length < 1 && target.length > 0) { current = " " };
+
+        const currentLetter = current.charCodeAt(0) - 32;
+        const targetLetter = target.charCodeAt(0) - 32;
+        if (currentLetter != targetLetter) {
+            return String.fromCharCode(((currentLetter + 1) % 95) + 32) + current.substring(1);
+        } else {
+            return String.fromCharCode(currentLetter + 32) + to(current.substring(1), target.substring(1));
+        }
+
+    }
+
+    const toggle = () => {
+        const body = document.getElementsByTagName("body")[0];
+        body.className = body.className === "" ? "dark" : "";
+    }
+
+
+</script>
+
+</html>
