@@ -3,6 +3,9 @@
     body {
         font-family: monospace;
         font-size: larger;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .dark {
@@ -20,15 +23,15 @@
         font-weight: 900;
     }
 
-    .header {
+    .container {
         width: 70%;
         margin: auto;
         text-align: center;
     }
-    .content {
-        width: 70%;
-        margin: auto;
+
+    .header {       
     }
+
 
 </style>
 
@@ -39,41 +42,62 @@
 </head>
 
 <body class="dark">
-    <div class="header">
-        <h1>Zuraiz Zafar | Digized</h1>
-        <a href="https://github.com/digized">Github</a>
-        <a href="https://linkedin.com/in/zuraizzafar">LinkedIn</a>
-        <a href="resume.pdf">Resume</a>
-        <a href="http://instagram.com/digizeds">Instagram</a>
-        <a href="http://instagram.com/digizeds">Projects</a>
-        <a href="javascript:toggle();">💡</a>
+    <div class="container">
+        <div class="header">
+            <h1>Zuraiz Zafar | Digized</h1>
+            <a href="https://github.com/digized">Github</a>
+            <a href="https://linkedin.com/in/zuraizzafar">LinkedIn</a>
+            <a href="resume.pdf">Resume</a>
+            <a href="http://instagram.com/digizeds">Instagram</a>
+            <a href="javascript:toggle();">💡</a>
+        </div>
+        <div class="content">
+            <h2>Projects</h2>
+            <div class="projects"></div>
+        </div>
     </div>
-    <div class="content">
-        <h2>Projects</h2>
-        <div class="projects"></div>
-    </div>
+
 </body>
 
 <script>
 
     const projects = [
         {
-            title: "Test",
+            title: "uOttawa Schedule Generator",
             images: [
 
             ],
-            url: "",
-            description: "Test description."
-        }
+            url: "/schedule-generator",
+            description: "A quick and easy way to generate schedules for a semester at the university of Ottawa."
+        },
+        {
+            title: "Bored App",
+            images: [
+
+            ],
+            url: "https://play.google.com/store/apps/details?id=ca.digized.bored",
+            description: ""
+        },
+        {
+            title: "Others",
+            images: [
+
+            ],
+            url: "https://github.com/Digized?tab=repositories",
+            description: ""
+        },
+
     ];
 
     const projectsContainer = document.getElementsByClassName("projects")[0];
 
-    projects.forEach(project => {
+    projects.forEach((project, i) => {
         const link = document.createElement("a")
         link.setAttribute("href", project.url);
-        link.textContent = project.title;
-        projectsContainer.appendChild(link);
+        link.textContent = `${project.title}`;
+        const container = document.createElement("div");
+        container.appendChild(link)
+        projectsContainer.appendChild(container);
     });
 
 
