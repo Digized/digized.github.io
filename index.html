@@ -96,7 +96,7 @@
 
 
 
-    const elements = [...document.getElementsByTagName("a"), ...document.getElementsByTagName("h1"), ...document.getElementsByTagName("h2")];
+    const elements = [...document.getElementsByTagName("a"), ...document.getElementsByTagName("h1"), ...document.getElementsByTagName("h2"), ...document.getElementsByTagName("h3")];
     for (let element of elements) {
         element.originalText = element.textContent;
         element.onmouseover = (event) => {
